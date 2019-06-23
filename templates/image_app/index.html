@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% bootstrap_css%}
+{% load widget_tweaks %}
+{% block content %}
+{% load static %}
+
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<div class="card-body">
+				<h3 class="text-center font-weight-bold mb-4" style="color: #666666;">Image Transformは画像を白黒にしたり、<br>モザイク加工したりするためのアプリです。</h3>
+				{% if user.is_authenticated %}
+		    	<h6 class="text-center font-weight-bold mb-4" style="color: #666666;">{{ user.username }}さん、こんにちは。</h6>
+		    	<div class="row justify-content-center">
+		    		<a class="mr-4 btn btn-lg btn-primary" role="button" href="{% url 'image_app:users_detail' user.id %}">あなたページへ</a>
+			    </div>
+			    {% else %}
+			    <h3 class="text-center font-weight-bold mb-4" style="color: #666666;">こんにちは。ゲストさん</h3>
+			    <div class="row justify-content-center">
+			    	<a class="mr-4 btn btn-lg btn-primary" role="button" href="{% url 'image_app:login' %}" >ログイン</a>
+			    	<a class="btn btn-lg btn-primary" role="button" href="{% url 'image_app:signup' %}">ユーザー登録</a>
+			    </div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>		
+{% endblock %}
+

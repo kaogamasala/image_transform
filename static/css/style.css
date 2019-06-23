@@ -1,0 +1,19 @@
+
+/*for messsage css*/
+.message-success {
+    background-color: #00d1b2;
+    padding: 10px;
+    padding-left: 30px;
+    border-radius: 4px;
+}        
+
+/*datatables*/
+.container {
+    max-width: 80%;
+}
+#data-table table {
+        border-collapse: collapse;      
+    }
+td, th {
+        text-align: center;
+    }
